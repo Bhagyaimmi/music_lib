@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<a href="{% url 'folder-create' %}" class="btn btn-success">Create New Folder</a>
+<div class="list-group mt-4">
+    {% for folder in folders %}
+        <div class="list-group-item">
+            <h5>{{ folder.name }}</h5>
+            <p>Tracks: {{ folder.tracks.count }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
